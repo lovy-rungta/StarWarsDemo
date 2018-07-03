@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="starwars.lovy.com.starwarsdemo.components.DetailsActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="details"
+            type="starwars.lovy.com.starwarsdemo.model.DetailsResponse" />
+
+        <variable
+            name="fetching"
+            type="Boolean" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="18sp"
+                android:textColor="@color/textLabel" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:text="@{details.name}"
+                android:textSize="18sp"
+                android:textColor="@color/textValue" />
+
+            <TextView
+                android:id="@+id/tv_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_marginTop="16dp"
+                android:text="Height"
+                android:textSize="18sp"
+                android:textColor="@color/textLabel" />
+
+            <TextView
+                android:id="@+id/height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_height"
+                android:text="@{details.height}"
+                android:textSize="18sp"
+                android:textColor="@color/textValue" />
+
+            <TextView
+                android:id="@+id/tv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/height"
+                android:layout_marginTop="16dp"
+                android:text="Weight"
+                android:textSize="18sp"
+                android:textColor="@color/textLabel" />
+
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_weight"
+                android:text="@{details.mass}"
+                android:textSize="18sp"
+                android:textColor="@color/textValue" />
+
+            <TextView
+                android:id="@+id/kg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_weight"
+                android:layout_toRightOf="@+id/weight"
+                android:paddingLeft="4dp"
+                android:text="kg"
+                android:textSize="18sp"
+                android:textColor="@color/textValue" />
+
+            <TextView
+                android:id="@+id/tv_created"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/weight"
+                android:layout_marginTop="16dp"
+                android:text="Created"
+                android:textSize="18sp"
+                android:textColor="@color/textLabel" />
+
+            <TextView
+                android:id="@+id/created"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_created"
+                android:text="@{details.created}"
+                android:textSize="18sp"
+                android:textColor="@color/textValue" />
+
+        </RelativeLayout>
+
+
+        <FrameLayout
+            android:id="@+id/progressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{fetching ? View.VISIBLE : View.GONE}">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+    </RelativeLayout>
+</layout>

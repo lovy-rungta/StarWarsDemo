@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StarWarsDemo</string>
+    <string name="character_key">CHARACTER</string>
+    <string name="no_internet">No internet found. Please try again later.</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DDBB00</color>
+    <color name="colorPrimaryDark">#DDBB00</color>
+    <color name="colorAccent">#DDBB00</color>
+    <color name="background">#222222</color>
+    <color name="listItemText">#FFFFFF</color>
+    <color name="textLabel">#DDBB00</color>
+    <color name="textValue">#FFFFFF</color>
+</resources>
